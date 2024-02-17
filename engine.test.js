@@ -460,8 +460,8 @@ describe('commitlint config header-max-length', function() {
     });
 
     it('with no environment or commitizen config override', function() {
-      return mockOptions(72).then(function(options) {
-        expect(options).to.have.property('maxHeaderWidth', 72);
+      return mockOptions(100).then(function(options) {
+        expect(options).to.have.property('maxHeaderWidth', 100);
       });
     });
 

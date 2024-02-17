@@ -48,7 +48,7 @@ var mapToInquirerChoices = function (definitions) {
 // fine.
 module.exports = function(options) {
   var isUsingCustomScopes = options.scopes && Object.keys(options.scopes).length > 0;
-
+  
   return {
     // When a user runs `git cz`, prompter will
     // be executed. We pass you cz, which currently
@@ -77,7 +77,13 @@ module.exports = function(options) {
           choices: mapToInquirerChoices(options.types),
           default: options.defaultType
         },
-        {
+        isUsingCustomScopes ? {
+          type: 'list',
+          name: 'scope',
+          message: "Select the scope of the change that you're committing:",
+          choices: mapToInquirerChoices(options.scopes),
+          default: options.defaultScope
+        } : {
           type: 'input',
           name: 'scope',
           message:
@@ -89,13 +95,7 @@ module.exports = function(options) {
               : value.trim().toLowerCase();
           }
         },
-        isUsingCustomScopes ? {
-          type: 'list',
-          name: 'scope',
-          message: "Select the scope of the change that you're committing:",
-          choices: mapToInquirerChoices(options.scopes),
-          default: options.defaultScope
-        } : {
+        {
           type: 'input',
           name: 'subject',
           message: function(answers) {
