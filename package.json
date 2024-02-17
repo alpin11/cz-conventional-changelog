@@ -1,6 +1,6 @@
 {
   "name": "@alpin11/cz-conventional-changelog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Commitizen adapter following the conventional-changelog format.",
   "main": "index.js",
   "packageManager": "pnpm@8.6.11",
@@ -10,16 +10,20 @@
     "format": "prettier --write *.js",
     "semantic-release": "semantic-release"
   },
-  "homepage": "https://github.com/commitizen/cz-conventional-changelog",
+  "homepage": "https://github.com/alpin11/cz-conventional-changelog",
   "repository": {
     "type": "git",
-    "url": "https://github.com/commitizen/cz-conventional-changelog.git"
+    "url": "https://github.com/alpin11/cz-conventional-changelog.git"
   },
   "engineStrict": true,
   "engines": {
     "node": ">= 10"
   },
   "author": "Jim Cummins <jimthedev@gmail.com>",
+  "contributors": [{
+    "name": "David Höck",
+    "email": "d.hoeck@alpin11.com"
+  }],
   "license": "MIT",
   "dependencies": {
     "chalk": "^3.0.0",
