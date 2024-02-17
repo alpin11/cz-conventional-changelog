@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Commitizen adapter following the conventional-changelog format.",
   "main": "index.js",
+  "packageManager": "pnpm@8.6.11",
   "scripts": {
     "commit": "git-cz",
     "test": "mocha *.test.js",
@@ -44,7 +45,17 @@
   },
   "config": {
     "commitizen": {
-      "path": "./index.js"
+      "path": "./index.js",
+      "scopes": [
+        {
+          "title": "scope1",
+          "description": "Description for scope1"
+        },
+        {
+          "name": "scope2",
+          "description": "Description for scope2"
+        }
+      ]
     }
   }
 }
