@@ -209,8 +209,7 @@ module.exports = function(options) {
 
         if (Array.isArray(answers.scope)) {
           scope = '(' + answers.scope.join(',') + ')'
-        }
-        else if (answers.scope) {
+        } else if (typeof answers.scope === 'string') {
           scope = '(' + answers.scope + ')'
         }
 
