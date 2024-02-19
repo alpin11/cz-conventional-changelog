@@ -1,6 +1,6 @@
 {
   "name": "@alpin11/cz-conventional-changelog",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Commitizen adapter following the conventional-changelog format.",
   "main": "index.js",
   "packageManager": "pnpm@8.6.11",
@@ -50,16 +50,14 @@
   "config": {
     "commitizen": {
       "path": "./index.js",
-      "scopes": [
-        {
-          "title": "scope1",
+      "scopes": {
+        "scope1": {
           "description": "Description for scope1"
         },
-        {
-          "name": "scope2",
+        "scope2": {
           "description": "Description for scope2"
         }
-      ]
+      }
     }
   }
 }

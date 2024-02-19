@@ -366,7 +366,7 @@ describe('scope', function () {
         title: 'Configuration',
       }
     };
-    expect(getQuestion('scope', { types, scopes })).to.have.property('type', 'list');
+    expect(getQuestion('scope', { types, scopes })).to.have.property('type', 'checkbox');
   });
 });
 

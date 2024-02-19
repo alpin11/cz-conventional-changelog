@@ -78,11 +78,12 @@ module.exports = function(options) {
           default: options.defaultType
         },
         isUsingCustomScopes ? {
-          type: 'list',
+          type: 'checkbox',
           name: 'scope',
-          message: "Select the scope of the change that you're committing:",
+          message: "Select the scopes of the change that you're committing:",
           choices: mapToInquirerChoices(options.scopes),
-          default: options.defaultScope
+          default: options.defaultScope,
+
         } : {
           type: 'input',
           name: 'scope',
@@ -204,8 +205,14 @@ module.exports = function(options) {
           width: options.maxLineWidth
         };
 
-        // parentheses are only needed when a scope is present
-        var scope = answers.scope ? '(' + answers.scope + ')' : '';
+        var scope = ''
+
+        if (Array.isArray(answers.scope)) {
+          scope = '(' + answers.scope.join(',') + ')'
+        }
+        else if (answers.scope) {
+          scope = '(' + answers.scope + ')'
+        }
 
         // Hard limit this line in the validate
         var head = answers.type + scope + ': ' + answers.subject;
